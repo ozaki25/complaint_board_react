@@ -1,14 +1,16 @@
 import React from "react";
 import { Col, Grid, Row } from "react-bootstrap";
+import SideMenu from "./SideMenu";
+import Contents from "./Contents";
 
 const Main = () => (
   <Grid>
     <Row>
       <Col xs={3}>
-        <h1>Col-3</h1>
+        <SideMenu />
       </Col>
       <Col xs={9}>
-        <h1>Col-9</h1>
+        <Contents />
       </Col>
     </Row>
   </Grid>
