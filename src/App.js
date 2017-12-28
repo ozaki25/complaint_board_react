@@ -1,6 +1,13 @@
 import React from "react";
-import "./App.css";
+import Header from "./components/Header";
 
-const App = () => <h1>Hello!</h1>;
+const App = () => (
+  <React.Fragment>
+    <Header />
+    <div className="container">
+      <h1>Hello!</h1>
+    </div>
+  </React.Fragment>
+);
 
 export default App;
