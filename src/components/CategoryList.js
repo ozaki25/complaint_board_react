@@ -8,7 +8,9 @@ const categories = [
     { id: 3, name: 'Category3' },
 ];
 
-const listItem = (category) => <CategoryItem category={category} />
+const listItem = (category) => (
+    <CategoryItem category={category} />
+);
 
 const CategoryList = () => (
     <ListGroup>

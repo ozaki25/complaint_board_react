@@ -1,11 +1,12 @@
 import React from "react";
 import { Panel } from "react-bootstrap";
+import CommentList from "./CommentList";
 
 const title = "index of comments";
 
 const Contents = () => (
     <Panel header={title} bsStyle="primary">
-      Panel content
+      <CommentList />
     </Panel>
 );
 
