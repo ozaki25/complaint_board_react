@@ -1,7 +1,7 @@
 import { apiUrl } from "../configs/url";
 
 const Categories = {
-    fetchAll() {
+    findAll() {
         return fetch(`${apiUrl}/categories`);
     }
 }

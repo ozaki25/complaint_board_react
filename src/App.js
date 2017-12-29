@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import Header from "./components/Header";
 import Main from "./components/Main";
-import Categories from "./actions/categories";
+import Categories from "./actions/Categories";
+import Comments from "./actions/Comments";
 
 class App extends Component {
   constructor(props) {
@@ -9,6 +10,7 @@ class App extends Component {
     this.state = {
       categories: [],
       comments: [],
+      currentCategoryId: null,
     }
   }
 
@@ -17,17 +19,29 @@ class App extends Component {
   }
 
   async setup() {
-    const response = await Categories.fetchAll();
+    await this.fetchCategories();
+    await this.fetchComments();
+  }
+
+  async fetchCategories() {
+    const response = await Categories.findAll();
     const categories = await response.json();
-    this.setState({ categories });
+    const currentCategoryId = categories.length ? categories[0].id : null;
+    this.setState({ categories, currentCategoryId });
+  }
+
+  async fetchComments() {
+    const response = await Comments.findByCategoryId(this.state.currentCategoryId);
+    const comments = await response.json();
+    this.setState({ comments });
   }
 
   render() {
-    const { categories } = this.state;
+    const { categories, comments } = this.state;
     return (
       <React.Fragment>
         <Header />
-        <Main categories={categories} />
+        <Main categories={categories} comments={comments} />
       </React.Fragment>
     )
   }

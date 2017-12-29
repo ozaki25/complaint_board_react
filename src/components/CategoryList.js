@@ -3,7 +3,7 @@ import { ListGroup } from "react-bootstrap";
 import CategoryItem from "./CategoryItem";
 
 const listItem = (category) => (
-    <CategoryItem category={category} />
+    <CategoryItem key={category.id} category={category} />
 );
 
 const CategoryList = ({ categories }) => (

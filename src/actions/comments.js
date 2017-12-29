@@ -1,8 +1,8 @@
 import { apiUrl } from "../configs/url";
 
 const Comments = {
-    fetchAll() {
-        return fetch(`${apiUrl}/comments`);
+    findByCategoryId(categoryId) {
+        return fetch(`${apiUrl}/categories/${categoryId}/comments`);
     }
 }
 
