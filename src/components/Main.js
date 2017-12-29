@@ -3,11 +3,11 @@ import { Col, Grid, Row } from "react-bootstrap";
 import SideMenu from "./SideMenu";
 import Contents from "./Contents";
 
-const Main = () => (
+const Main = ({ categories }) => (
   <Grid>
     <Row>
       <Col xs={3}>
-        <SideMenu />
+        <SideMenu categories={categories} />
       </Col>
       <Col xs={9}>
         <Contents />
