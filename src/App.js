@@ -1,11 +1,11 @@
 import React from "react";
 import Header from "./components/Header";
-import Main from "./components/Main";
+import Main from "./containers/Main";
 
 const App = () => (
   <React.Fragment>
     <Header />
-    <Main categories={[]} comments={[]} />
+    <Main />
   </React.Fragment>
 );
 
