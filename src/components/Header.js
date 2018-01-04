@@ -7,12 +7,15 @@ const Header = () => (
       <Navbar.Brand>
         <a href="#">ComplaintBoardReact</a>
       </Navbar.Brand>
+      <Navbar.Toggle />
     </Navbar.Header>
-    <Nav>
-      <NavItem eventKey={1} href="#">
-        Link
-      </NavItem>
-    </Nav>
+    <Navbar.Collapse>
+      <Nav>
+        <NavItem eventKey={1} href="#">
+          Link
+        </NavItem>
+      </Nav>
+    </Navbar.Collapse>
   </Navbar>
 );
 
